@@ -7,6 +7,11 @@ import re
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+   print('Request for index page received')
+   return render_template('index.html')
+
 def parse_direction(direction):
     match = re.match(
         r'(east|west|north|south|left|right|U-turn),\s*([\d.]+)\s*(km|m)', direction, re.I)
@@ -19,11 +24,6 @@ def parse_direction(direction):
         return action, value
     else:
         raise ValueError("Invalid direction format: {}".format(direction))
-
-@app.route('/')
-def index():
-   print('Request for index page received')
-   return render_template('index.html')
    
 @app.route('/data', methods=['POST'])
 def receive_data_from_JS():
