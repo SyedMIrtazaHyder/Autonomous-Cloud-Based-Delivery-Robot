@@ -56,7 +56,7 @@ async function initMap() {
   //Image size can be changed via these params
   carImg.height = 30;
   carImg.width = 30;
-  carImg.src = "car.png"
+  carImg.src = 'static/images/car.png'
 
   //Initializing a  marker
   let src_marker = new AdvancedMarkerElement({

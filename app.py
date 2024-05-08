@@ -6,6 +6,7 @@ from flask import (Flask, redirect, render_template, request,
 import re
 
 app = Flask(__name__)
+app.config['STATIC_FOLDER'] = 'static'
 
 @app.route('/')
 def index():

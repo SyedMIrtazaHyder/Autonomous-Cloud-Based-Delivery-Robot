@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/x-icon" href="map-regular.svg">
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='map-regular.svg') }}">
 	<title>
 		mmbdproject
 	</title>
@@ -12,14 +12,14 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="module" href="{{ url_for('static', filename='js/map_marker_set.js') }}"></script>
-
+    <!-- <script type="module" href="{{ url_for('static', filename='js/map_marker_set.js') }}"></script> -->
+	<script type="text/javascript" src="{{ url_for('static', filename = 'js/map_marker_set.js') }}"></script>
 </head>
 <body>
 
 	<label></label>
-	<img class="ceme" src="CEME-Logo.png">
-	<img class="nust" src="NUST-Logo.svg">
+	<img class="ceme" src="{{ url_for('static', filename='images/CEME-Logo.png') }}">
+	<img class="nust" src= "{{ url_for('static', filename='NUST-Logo.svg') }}">
 	<h1 align="center">DEPARTMENT OF Mechanical ENGINEERING</h1>
 <h1>COLLEGE OF E&ME, NUST, RAWALPINDI</h1>
 <br>
@@ -49,13 +49,6 @@
 <br>
 <hr>
 <br>
-	<table>
-	<tr>
-	<td><a class="simulation" href="simulation.html">Simulation</a></td>
-	<td><a class="report" href="https://nustedupk0-my.sharepoint.com/:w:/g/personal/mirtaza_ce43ceme_student_nust_edu_pk/EQu3L86kCeBCvlsZYr11P4sBf9ojkbRBdeBz_x39_Cij2A?rtime=oCXGscv820g">Report</a></td>
-	</tr>
-	</table>
-<br>
 <br>
 <hr>
 <br>
@@ -78,9 +71,9 @@
 			<label id="src_cords" name="src_cords">Hi there</label>
 			<label id="dest_cords" name="dest_cords">Hello</label>
 		</div>
-		<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQNRImowyz4NNCjcamAi4jThwFJO1zZLg&callback=initMap&v=weekly"
-		defer></script>
+		<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQNRImowyz4NNCjcamAi4jThwFJO1zZLg&callback=initMap"
+		></script>
 	</section>
 </section>
 <h3 class="manualcontrol">Manual Controls</h3>
@@ -110,7 +103,7 @@
 			}
 		});
 	</script>
-	<script type="module" href="{{ url_for('static', filename='js/ArrowKey.js') }}></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/ArrowKey.js') }}"></script>
     <!-- <script
     src = "https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&format=gif&zoom=14&size=400x400&key=AIzaSyCCB7UocJCGGZO4BxsxQ24TCtTNJTujGN0"
     ></script> -->

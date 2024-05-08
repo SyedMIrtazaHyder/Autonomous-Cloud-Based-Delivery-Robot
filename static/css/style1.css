@@ -1,6 +1,6 @@
 body {
 	/*display: flex;*/
- background-image: url("lightbackground1.jpg");
+ background-image: url("/static/images/lightbackground1.jpg");
  background-attachment: fixed;
  background-repeat: repeat-y;
  background-size:cover ;
@@ -186,7 +186,7 @@ hr {
 }
 
 .up-button, .left-button, .right-button, .down-button{
-    background: url('icons8-scroll-up-30.png') no-repeat;
+    background: url('/static/images/icons8-scroll-up-30.png') no-repeat;
     width: 150px;
     height: 150px;
     border: none;
