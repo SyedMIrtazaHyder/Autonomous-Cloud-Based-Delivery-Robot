@@ -23,11 +23,8 @@ def parse_direction(direction):
 @app.route('/')
 def index():
    print('Request for index page received')
-   try:
-       return render_template('index.html')
-   except:
-       return render_template('404.html')
-
+   return render_template('index.html')
+   
 @app.route('/data', methods=['POST'])
 def receive_data_from_JS():
     global Directions
