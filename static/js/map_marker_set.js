@@ -244,7 +244,7 @@ function sendDestinationCoordinates(destination) {
 
 
 async function fetchDataFromPython(src_marker) {  
-  fetch("http://127.0.0.1:5000/sendDataToJS")
+  fetch(url + "/sendDataToJS")
   .then(response => response.json())
   .then(data => {
     console.log(data);
