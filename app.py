@@ -20,6 +20,14 @@ def parse_direction(direction):
     else:
         raise ValueError("Invalid direction format: {}".format(direction))
 
+@app.route('/')
+def index():
+   print('Request for index page received')
+   try:
+       return render_template('index.html')
+   except:
+       return render_template('404.html')
+
 @app.route('/data', methods=['POST'])
 def receive_data_from_JS():
     global Directions
