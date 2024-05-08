@@ -138,7 +138,7 @@ async function initMap() {
           }
         }
         console.log(directions_data) //SEND TO SOCKET
-        fetch(url + '/data', { //python server to fetch from
+        fetch('/data', { //python server to fetch from
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -244,7 +244,7 @@ function sendDestinationCoordinates(destination) {
 
 
 async function fetchDataFromPython(src_marker) {  
-  fetch(url + "/sendDataToJS")
+  fetch("/sendDataToJS")
   .then(response => response.json())
   .then(data => {
     console.log(data);
