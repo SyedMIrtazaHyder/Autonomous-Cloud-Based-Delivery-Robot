@@ -27,6 +27,7 @@ async function initMap() {
   });
   directionsRenderer.setMap(map);
 
+  // For displaying direction API
   infoWindow = new google.maps.InfoWindow();
   
   //---------------------------Marker Initializatin and Customization------------------------
@@ -197,7 +198,7 @@ async function initMap() {
 
   setInterval(() => {
     fetchDataFromPython(src_marker);
-  }, 5000);
+  }, 20000);
 }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer, srcLatLng, destLatLng) {
