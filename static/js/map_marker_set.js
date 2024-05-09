@@ -248,14 +248,14 @@ async function fetchDataFromPython(src_marker) {
   fetch("/sendDataToJS")
   .then(response => response.json())
   .then(data => {
-    console.log(data);
-    const coords = data.split(',');
+    console.log(data['message']);
+    const coords = data['message'].split(',');
     const src_cords = document.getElementById('src_cords');
     const slat = parseFloat(coords[0]); const slng = parseFloat(coords[1]);
     if (slat == 0 || slng == 0){
       return;
     }
-    src_cords.innerText = `Latitude {slat}\nLongitude: {slng}`;
+    src_cords.innerText = `Latitude ${slat}\nLongitude: ${slng}`;
 
     //displaying marker
     //Initializing a  marker
