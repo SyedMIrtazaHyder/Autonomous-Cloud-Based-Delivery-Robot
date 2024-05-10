@@ -91,7 +91,7 @@ hr {
 
 
 /*Video Display*/
-.video_tab{
+#video_tab{
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   padding-left: 10px;
