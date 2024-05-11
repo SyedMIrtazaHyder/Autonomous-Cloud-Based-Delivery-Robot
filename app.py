@@ -26,6 +26,7 @@ def index():
 def parse_direction(direction):
     match = re.match(
         r'(east|west|north|south|left|right|U-turn),\s*([\d.]+)\s*(km|m)', direction, re.I)
+    direction = direction.split(':')[1]
     if match:
         action = match.group(1).lower()
         value = float(match.group(2))
@@ -41,29 +42,35 @@ def receive_data_from_JS():
     global Directions
     direction_val = request.json
     out_str = ""
-    if direction_val != "" or direction_val != Directions:
+    if re.match(r'Dir:(left|right|up|down)', direction_val, re.I):
+        print('Manual_Control')
+        Directions = direction_val
+
+    elif direction_val != "" or direction_val != Directions:
         Directions = direction_val
         parts = Directions.split('\n')
         for i in parts:
             if i == "":
                 continue
-            action, value = parse_direction(i)
-            print(action, " = ", value)
-            out_str += action + '=' + str(value) + ','
+            # action, value = parse_direction(i)
+            # print(action, " = ", value)
+            # out_str += action + '=' + str(value) + ','
 
-        response_data = {"message": Directions}
+    print("current value: ", Directions)
+    response_data = {"message": Directions}
+    print(response_data)
         # Sending data to Pi
-        try:
-            registry_manager = IoTHubRegistryManager(CONNECTION_STR)
-            print(response_data)
-            registry_manager.send_c2d_message(DEVICE_ID, out_str)
-        except Exception as ex:
-            print ( "Unexpected error {0}" % ex )
-    
-        except KeyboardInterrupt:
-            print ( "IoT Hub C2D Messaging service sample stopped" )
+    try:
+        registry_manager = IoTHubRegistryManager(CONNECTION_STR)
+        print(response_data)
+        registry_manager.send_c2d_message(DEVICE_ID, Directions)
+    except Exception as ex:
+        print ( "Unexpected error {0}" % ex )
 
-        return jsonify(response_data)
+    except KeyboardInterrupt:
+        print ( "IoT Hub C2D Messaging service sample stopped" )
+
+    return jsonify(response_data)
 
 # async def receive_events():
 #     client = EventHubConsumerClient.from_connection_string(

@@ -144,7 +144,7 @@ async function initMap() {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(directions_data),
+          body: JSON.stringify('Path:' + directions_data),
         })
         .then(response => response.json())
         .then(data => {

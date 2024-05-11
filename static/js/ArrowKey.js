@@ -5,7 +5,24 @@ arrowButtons.forEach(button => {
     button.addEventListener('click', () => {
         const direction = button.id; // Get the button's ID (which represents the direction)
         console.log(`Clicked: ${direction.split('-')[0]}`);
+        fetch('/data', { //python server to fetch from
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify('Dir:'+direction.split('-')[0]),
+          }
+    )
+    .then(response => response.json())
+    .then(data => {
+      console.log('Response from Python:', data);
+      // Process the response from Python as needed
+    })
+    .catch(error => {
+      console.error('Error:', error);
     });
+
+    })
 });
 
 // const serverAddress = "https://compeccwebsite.z29.web.core.windows.net/"; // Replace with your actual Azure server address
