@@ -5,7 +5,7 @@
 
 //For loading markers: const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary;
 let map, infoWindow, socket, table;
-//let staticMapURL = https://maps.googleapis.com/maps/api/staticmap?size=400x400&maptype=roadmap&markers=color:blue%7Clabel:S%7C11211%7C11206%7C11222&key=AIzaSyCCB7UocJCGGZO4BxsxQ24TCtTNJTujGN0&signature=Intzeger
+//let staticMapURL = https://maps.googleapis.com/maps/api/staticmap?size=400x400&maptype=roadmap&markers=color:blue%7Clabel:S%7C11211%7C11206%7C11222&key=APIKey&signature=Intzeger
 
 let url = "compeccwebsitehoster.azurewebsites.net"
 
@@ -100,10 +100,10 @@ async function initMap() {
     
     //opening URL to get the encoded polyline points
     // const json_polyline_overview = "https://maps.googleapis.com/maps/api/directions/json?origin=" + src_marker.position.lat + ",%20" + src_marker.position.lng + 
-    // "&destination=" + dest_marker.position.lat + ",%20" + dest_marker.position.lng + "&mode=driving&key=AIzaSyCCB7UocJCGGZO4BxsxQ24TCtTNJTujGN0";
+    // "&destination=" + dest_marker.position.lat + ",%20" + dest_marker.position.lng + "&mode=driving&key=APIKey";
 
     // window.open(json_polyline_overview);
-    // //end goal: https://maps.googleapis.com/maps/api/staticmap?size=200x200&path=enc:wxelEish|LH`BXtEB?&key=AIzaSyCCB7UocJCGGZO4BxsxQ24TCtTNJTujGN0
+    // //end goal: https://maps.googleapis.com/maps/api/staticmap?size=200x200&path=enc:wxelEish|LH`BXtEB?&key=APIKey
 
     // //Getting data from JSON
     //Setting sidebar to display directions
@@ -301,4 +301,4 @@ window.initMap = initMap;
 /*"https://maps.googleapis.com/maps/api/staticmap?size=1000x1000\
 &markers=size:small%7Ccolor:blue%7Clabel:S%7C" + src_marker.position.lat + ", " + src_marker.position.lng + 
 "&markers=size:small%7Ccolor:0xFFFF00%7Clabel:D%7C" + dest_marker.position.lat + ", " + dest_marker.position.lng +
-"&key=AIzaSyCCB7UocJCGGZO4BxsxQ24TCtTNJTujGN0"*/
+"&key=APIKey"*/
