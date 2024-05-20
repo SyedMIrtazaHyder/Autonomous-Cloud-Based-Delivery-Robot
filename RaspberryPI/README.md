@@ -28,15 +28,15 @@ The motor drivers were used to control the 24V Henkwell Gear Motors. These drive
 A file which helps control 6 motor drivers using only 3 inputs. This was developed to address the concern stated above.
 
 ## Resources
-https://github.com/m-rtijn/mpu6050 (MPU 6050 files for Raspberry Pi)
-https://github.com/microsoft/IoT-For-Beginners/blob/main/2-farm/lessons/4-migrate-your-plant-to-the-cloud/README.md (General Tutorial Followed)
-https://github.com/microsoft/IoT-For-Beginners/blob/main/2-farm/lessons/4-migrate-your-plant-to-the-cloud/single-board-computer-connect-hub.md (Tutorial followed for implementing on Raspberry Pi)
-https://learn.microsoft.com/en-us/azure/iot-hub/c2d-messaging-python (C2D Message Implementation)
-https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods (Direct Message Theory)
-https://learn.microsoft.com/en-us/azure/iot-hub/device-management-python (Direct Message Implementation)
-https://github.com/Azure/azure-iot-hub-python (Python SDK for IoT Hub)
-https://raspberrytips.com/how-to-live-stream-pi-camera/ (Livestream with picam)
-https://raspberrypi.stackexchange.com/questions/115889/best-way-to-stream-usb-camera-video-in-2020 (streaming with USB webcam)
+- [MPU 6050 files for Raspberry Pi](https://github.com/m-rtijn/mpu6050)
+- [General Tutorial Followed](https://github.com/microsoft/IoT-For-Beginners/blob/main/2-farm/lessons/4-migrate-your-plant-to-the-cloud/README.md)
+- [Tutorial followed for implementing on Raspberry Pi](https://github.com/microsoft/IoT-For-Beginners/blob/main/2-farm/lessons/4-migrate-your-plant-to-the-cloud/single-board-computer-connect-hub.md)
+- [C2D Message Implementation](https://learn.microsoft.com/en-us/azure/iot-hub/c2d-messaging-python)
+- [Direct Message Theory](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods)
+- [Direct Message Implementation](https://learn.microsoft.com/en-us/azure/iot-hub/device-management-python)
+- [Python SDK for IoT Hub](https://github.com/Azure/azure-iot-hub-python)
+- [Livestream with Pi-Cam](https://raspberrytips.com/how-to-live-stream-pi-camera/)
+- [Streaming with USB webcam](https://raspberrypi.stackexchange.com/questions/115889/best-way-to-stream-usb-camera-video-in-2020)
 
 ## Current Problems:
 1. NEO 6M GPS module not working with pynmea, readline error
